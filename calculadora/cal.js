@@ -33,17 +33,17 @@ var operador = prompt("digite qual operador deseja -> | + , - , /, * | ")
 
     let resposta = prompt("VOCÊ DESEJA CONTINUAR ?? (S/N): ").toUpperCase().trim();
 
-    // Validar a resposta
+    
     while (resposta !== "S" && resposta !== "N") {
-        console.log("Resposta inválida! Por favor, digite 'S' para sim ou 'N' para não.");
+        console.log("Resposta inválida! Por favor, digite 'S' para sim ou 'N' para não."); // Validar a resposta
         resposta = prompt("VOCÊ DESEJA CONTINUAR ?? (S/N): ").toUpperCase().trim();
     }
 
-    // Se a resposta for 'N', encerrar o programa
+    
     if (resposta === "N") {
         continuar = false;
         console.log("Até a próxima!");
     }
 
-    console.log(); // Adiciona uma linha em branco para separar as execuções
+    console.log();
 }
