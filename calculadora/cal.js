@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')()
 
 
-    var continuar = false;
+    var continuar = true;
 
 
     while(continuar){
@@ -31,13 +31,19 @@ var operador = prompt("digite qual operador deseja -> | + , - , /, * | ")
     }
 
 
-        var resposta = "VOCÊ DESEJA CONTINUAR ?? (S/N)".toLowerCase;
+    let resposta = prompt("VOCÊ DESEJA CONTINUAR ?? (S/N): ").toUpperCase().trim();
 
-        if (resposta !== s){
-
-            continuar = false;
-
-                console.log ("Obrigado por usar o meu sistema de calculadora, ATE A PROXIMA!!!")
-        }
-
+    // Validar a resposta
+    while (resposta !== "S" && resposta !== "N") {
+        console.log("Resposta inválida! Por favor, digite 'S' para sim ou 'N' para não.");
+        resposta = prompt("VOCÊ DESEJA CONTINUAR ?? (S/N): ").toUpperCase().trim();
     }
+
+    // Se a resposta for 'N', encerrar o programa
+    if (resposta === "N") {
+        continuar = false;
+        console.log("Até a próxima!");
+    }
+
+    console.log(); // Adiciona uma linha em branco para separar as execuções
+}
